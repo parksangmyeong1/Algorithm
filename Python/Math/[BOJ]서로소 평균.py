@@ -1,19 +1,16 @@
-import sys
-
-def input():
-    return sys.stdin.readline().rstrip()
-
-def GCD(x,y):
+def gcd(x,y):
     if y == 0:
         return x
     else:
-        return GCD(y, x%y)
+        return gcd(y, x%y)
 
-N = int(input())
-A = list(map(int, input().split()))
-X = int(input())
-ans = []
-for i in A:
-    if GCD(X,i) == 1:
-        ans.append(i)
-print(sum(ans)/len(ans))
+n = int(input())
+a = list(map(int, input().split()))
+x = int(input())
+result = []
+
+for i in a:
+    if gcd(x,i) == 1:
+        result.append(i)
+
+print(sum(result)/len(result))
