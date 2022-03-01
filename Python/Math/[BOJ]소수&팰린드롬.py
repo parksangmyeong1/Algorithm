@@ -24,3 +24,31 @@ if result == 0:
   result = 1003001
 
 print(result)
+
+#########################################################################
+
+import sys
+input = sys.stdin.readline
+
+def is_palindrome(n): # 팰린드롬 확인 함수
+    length = len(n) // 2
+    for i in range(length):
+        if n[i] != n[-i-1]:
+            return False
+    return True
+
+def is_prime_number(n): # 소수 확인 함수
+    if n == 1:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if not n%i:
+            return False
+    return True
+
+N = int(input())
+
+while True:
+    if is_palindrome(str(N)) and is_prime_number(N):
+        break
+    N += 1
+print(N)
