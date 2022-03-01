@@ -37,11 +37,11 @@ def is_palindrome(n): # 팰린드롬 확인 함수
             return False
     return True
 
-def is_prime_number(n): # 소수 확인 함수
-    if n == 1:
+def is_prime_number(x): # 소수 찾는 함수
+    if x < 2:
         return False
-    for i in range(2, int(n**0.5)+1):
-        if not n%i:
+    for i in range(2, int(math.sqrt(x))+1):
+        if x % i == 0:
             return False
     return True
 
@@ -51,4 +51,5 @@ while True:
     if is_palindrome(str(N)) and is_prime_number(N):
         break
     N += 1
+    
 print(N)
