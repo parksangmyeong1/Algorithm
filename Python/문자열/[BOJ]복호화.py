@@ -3,8 +3,11 @@ t = int(input())
 for i in range(t):
     s = input().replace(' ', '')
     arr = [0] * 26
-    for c in s:
-        if c.isalpha:
-            arr[ord(c)-ord('a')] += 1
-    t = max(li)
-    print()
+    
+    for j in s:
+        arr[ord(j) - 97] += 1
+    
+    if arr.count(max(arr)) > 1:
+        print('?')
+    else:
+        print(chr(97 + arr.index(max(arr))))
