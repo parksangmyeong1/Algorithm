@@ -18,7 +18,7 @@ for i in range(n-1, 0, -1):
 def draw(n, idx):
     if n == 1:
         starMap[idx][idx] = '*'
-        return ;
+        return
     l = 4 * n -3
     
     
