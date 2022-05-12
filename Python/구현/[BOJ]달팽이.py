@@ -4,10 +4,10 @@ input = sys.stdin.readline
 n = int(input())
 m = int(input())
 result = [[0 for _ in range(n)] for _ in range(n)]
-num = n*n
-t_x, t_y, x,y = 0,0,0,0
+num = n * n
+t_x, t_y, x, y = 0, 0, 0, 0
 
-dx = [1,0,-1,0]
+dx = [1,0,-1,0] # 방향을 위한 리스트
 dy = [0,1,0,-1]
 
 result[x][y] = num
@@ -24,13 +24,13 @@ while num > 0:
         if num == m:
             t_x, t_y = nx, ny
         
-        x,y = nx,ny
+        x, y = nx, ny
         num -= 1
     
     else:
         i += 1
 
 for n in result:
-    print(*n)
+    print(*n) # 리스트 [] 제거 하기 위함
 
-print(t_x+1, t_y+1)
+print(t_x + 1, t_y + 1)
